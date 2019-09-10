@@ -68,8 +68,11 @@ void Tmr0_Init()
     T0CONbits.PSA     = 0;      /* habilito el preescaler */
     T0CONbits.T0PS0   = 1;      /* cargo el preescaler con 256 */ 
     T0CONbits.T0PS1   = 1;
-    T0CONbits.T0PS2   = 1;
-    TMR0L             = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
+    T0CONbits.T0PS2   = 1; 
     TMR0H             = 0xFF;   /* en total aprox 1.0022ms  casi 1ms */
+    TMR0L             = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
     INTCONbits.TMR0IE = 1;      /* Habilita la interrupción de timer 0 */
+    T0CONbits.TMR0ON  = 1;      /* Enciendo el timer */
 }
+
+
