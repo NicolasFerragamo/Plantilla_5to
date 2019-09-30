@@ -91,7 +91,7 @@ extern volatile uint8_t ED_BufferEntradas;
 	\return     void
 */
 
-void Debounce (void)
+void ED_Debounce (void)
 {
 	uint8_t cambios = 0, j = 0;
 	// cambios me avisa si hay algun cambio, esto indica que hay alguna tecla presionada
