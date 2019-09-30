@@ -1,6 +1,6 @@
 /**********************************************************************************************************
-*                                               Aplicacion
-*                               Codigo de la aplicacion a desarrollar
+*                                               Entradas Digitales
+*						Contiene las funciones para manejar entradas digitales
 *
 *						<Copyright>
 *
@@ -10,24 +10,23 @@
 *********************************************************************************************************/
 
 /*********************************************************************************************************
-*                                               <File description>
+*                                                Entradas Digitales
 *
-* Filename	: Aplicacion.h
+* Filename	: EntradasDigitales.h
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s):
-*
-*
-*
+*  Note(s): Para poder usar llamar a la fucnión void ED_Debounce(void);
+*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c
+*   Agregar la variable extern uint8_t ED_BufferEntradas en el archivo donde use ED_TECLA*
+* 
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *
- * \file		Aplicacion.h
- * \brief		Escriba la función de su aplicación de forma breve
- * \details     Escriba la función de su aplicación de forma extensa
- * \date		13 de junio del 2019
+ * \file		EntradasDigitales.h
+ * \brief		Contiene las funciones para manejar entradas digitales
+ * \date		30 de septiembre de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
 *********************************************************************************************************/
@@ -36,25 +35,25 @@
  *** MODULO
 *********************************************************************************************************/
 
-#ifndef APLICACION_H
-#define APLICACION_H
+#ifndef ENTRADAS_DIGITALES_H
+#define ENTRADAS_DIGITALES_H
 
 /*********************************************************************************************************
  *** INCLUDES GLOBALES
 *********************************************************************************************************/
 
-#include <xc.h>
-#include "Confbits.h"
-#include "Tdatos.h"
-#include "BaseBoard.h"
-#include "FW_InitKit.h"
-#include "FW_InitTimer.h" 
-#include "EntradasDigitales.h"
-
-
 /*********************************************************************************************************
  *** DEFINES GLOBALES
 *********************************************************************************************************/
+
+#define		ED_ACEPTAR_ESTADO	10  //!< cantidad de veces que deve contar para validar el estado 
+#define		ED_ENTRADAS         4   //!< cantidad de entradas 
+
+
+#define		ED_TECLA0 ((ED_BufferEntradas) & 0x01)        //!< macros para las teclas de entrada 
+#define		ED_TECLA1 ((ED_BufferEntradas >> 1) & 0x01)   //!< macros para las teclas de entrada 
+#define		ED_TECLA2 ((ED_BufferEntradas >> 2) & 0x01)   //!< macros para las teclas de entrada 
+#define		ED_TECLA3 ((ED_BufferEntradas >> 3) & 0x01)   //!< macros para las teclas de entrada 
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
@@ -65,19 +64,40 @@
 *********************************************************************************************************/
 
 /*********************************************************************************************************
- *** VARIABLES GLOBALES
+ *** VARIABLES GLOBALES 
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *** PROTOTIPOS DE FUNCIONES GLOBALES
-**********************************************************************************************************/
+*********************************************************************************************************/
 
 /**
-	\brief 		Funcion principal
- 	\author 	Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
- 	\date 		13 de junio del 2019
+	\fn         void ED_CuentaPulsos(void);
+	\brief      Funcion primitiva de entradas digitales 
+ 	\author     Nicolas Ferragamo
+ 	\date       30 de septiembre de 2019
+ 	\param      [in] void
+ 	\param      [out] void
+	\return     void
 */
 
-void Aplicacion (void);
+void ED_CuentaPulsos(void);
 
-#endif /* APLICACION_H */
+
+/**
+	\fn         void ED_Debounce(void)
+	\brief      Funcion para el debounce de las entradas digitales 
+ 	\author     Nicolas Ferragamo
+ 	\date       30 de septiembre de 2019
+ 	\param      [in] void
+ 	\param      [out] void
+	\return     void
+*/
+void ED_Debounce(void);
+
+#endif /* ENTRADAS_DIGITALES_H */
+
+
+
+
+
