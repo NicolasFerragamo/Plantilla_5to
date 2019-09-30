@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c main.c Primitivas/PR_EntradasDigitales.c Primitivas/FW_EntradasDigitales.c
+SOURCEFILES_QUOTED_IF_SPACED=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c Primitivas/PR_EntradasDigitales.c main.c Firmware_Driver/FW_EntradasDigitales.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1
+OBJECTFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1
 
 # Source Files
-SOURCEFILES=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c main.c Primitivas/PR_EntradasDigitales.c Primitivas/FW_EntradasDigitales.c
+SOURCEFILES=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c Primitivas/PR_EntradasDigitales.c main.c Firmware_Driver/FW_EntradasDigitales.c
 
 
 
@@ -126,14 +126,6 @@ ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1: Firmware_Init/FW_InitKit.c  nbproject/
 	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitKit.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1: Primitivas/PR_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d 
@@ -142,13 +134,21 @@ ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1: Primitivas/PR_EntradasDigitales
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.d ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1: Primitivas/FW_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Primitivas" 
-	@${RM} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1.d 
-	@${RM} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1 Primitivas/FW_EntradasDigitales.c 
-	@-${MV} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.d ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1: Firmware_Driver/FW_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 Firmware_Driver/FW_EntradasDigitales.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.d ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/Aplicacion/Aplicacion.p1: Aplicacion/Aplicacion.c  nbproject/Makefile-${CND_CONF}.mk
@@ -183,14 +183,6 @@ ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1: Firmware_Init/FW_InitKit.c  nbproject/
 	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitKit.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1: Primitivas/PR_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d 
@@ -199,13 +191,21 @@ ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1: Primitivas/PR_EntradasDigitales
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.d ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1: Primitivas/FW_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Primitivas" 
-	@${RM} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1.d 
-	@${RM} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1 Primitivas/FW_EntradasDigitales.c 
-	@-${MV} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.d ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Primitivas/FW_EntradasDigitales.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1: Firmware_Driver/FW_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 Firmware_Driver/FW_EntradasDigitales.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.d ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
