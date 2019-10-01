@@ -60,12 +60,6 @@
 #define BOT3    PORTDbits.RD6
 #define BOT4    PORTDbits.RD7
 
-/*********************** Definiciones de los Displays ************************/
-#define DISP1   LATAbits.LA4
-#define DISP2   LATAbits.LA5
-#define DISP3   LATEbits.LE0
-#define DISP4   LATEbits.LE1
-#define DOT     LATEbits.LE2
 
 #define		ENTRADA		1
 #define		SALIDA		0

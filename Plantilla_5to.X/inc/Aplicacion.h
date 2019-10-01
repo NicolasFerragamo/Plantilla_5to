@@ -50,7 +50,7 @@
 #include "FW_InitKit.h"
 #include "FW_InitTimer.h" 
 #include "EntradasDigitales.h"
-
+#include "Display7Segmentos.h"
 
 /*********************************************************************************************************
  *** DEFINES GLOBALES
