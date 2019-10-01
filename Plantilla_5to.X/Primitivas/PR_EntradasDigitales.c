@@ -16,7 +16,11 @@
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Para poder usar llamar a la fucnión void ED_Debounce(void);
+*  Note(s): Para poder usar llamar a la fucnión ED_Tic(); en la interrupción y a ED_Debounce();
+*   dentro de aplicacion();
+*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c y en cualquier archivo que use 
+*   ED_TECLA*
+* 
 *********************************************************************************************************/
 
 /*********************************************************************************************************
@@ -55,8 +59,12 @@
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
+ *   se escriben en CamelCase y estan precedidas por la identificación del 
+ *   módulo segida de un _ 
+ *   ej: MEM_POOL  Mem_PoolHeap; 
 *********************************************************************************************************/
-volatile uint8_t ED_BufferEntradas = 0 ;  //!< aca por cada bit me indica el estado de una tecla        
+volatile uint8_t ED_BufferEntradas = 0 ;  //!< aca por cada bit me indica el estado de una tecla
+        
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
 *********************************************************************************************************/
@@ -131,3 +139,4 @@ void ED_CuentaPulsos(void)
 	}
 
 }
+

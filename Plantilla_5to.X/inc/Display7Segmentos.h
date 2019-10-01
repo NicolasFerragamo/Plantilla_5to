@@ -17,7 +17,7 @@
 * Programmer(s) : NEF
 **********************************************************************************************************
 *  Note(s): Para poder usar este módulo debe llamar a la función DP_BarridoDisplay (); dentro de 
-*  la interrupcion
+*  Aplicacion() y llamar a la función DP_Tic() dentro de la interrupcion
 *********************************************************************************************************/
 
 /*********************************************************************************************************
@@ -46,6 +46,7 @@
  *** DEFINES GLOBALES
 *********************************************************************************************************/
 #define 	DP_DIGITOS		4  //!< Números de diplays
+#define     DP_TIC          5  //!< Demora del barrido
 
 #define DP_DISP4   LATAbits.LA4
 #define DP_DISP3   LATAbits.LA5
@@ -72,7 +73,7 @@
 
 *********************************************************************************************************/
 extern volatile uint8_t DP_msgDisplay[DP_DIGITOS];			
-
+extern volatile uint8_t DP_Delay;
 /*********************************************************************************************************
  *** PROTOTIPOS DE FUNCIONES GLOBALES
 **********************************************************************************************************/
@@ -98,5 +99,16 @@ void DP_BarridoDisplay (void);
  	\param [out] 	void
 */
 void DP_DisplayBCD(uint16_t valor, uint8_t dsp);
+
+
+/**
+	\fn  		void DP_Tic(void);
+	\brief 		Se encarga de la demora del barrido
+ 	\author 	Nicolás Exequiel Ferragamo
+ 	\date 		30 de septiembre de 2019
+ 	\param [in]     void
+ 	\param [out] 	void
+*/
+void DP_Tic(void);
 
 #endif /* __DISPLAY_7_SEGMENTOS_H */ 

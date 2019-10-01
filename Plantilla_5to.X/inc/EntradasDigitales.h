@@ -16,9 +16,10 @@
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Para poder usar llamar a la fucnión void ED_Debounce(void);
-*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c
-*   Agregar la variable extern uint8_t ED_BufferEntradas en el archivo donde use ED_TECLA*
+*  Note(s): Para poder usar llamar a la fucnión ED_Tic(); en la interrupción y a ED_Debounce();
+*   dentro de aplicacion();
+*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c y en cualquier archivo que use 
+*   ED_TECLA*
 * 
 *********************************************************************************************************/
 
@@ -49,12 +50,12 @@
 
 #define		ED_ACEPTAR_ESTADO	10  //!< cantidad de veces que deve contar para validar el estado 
 #define		ED_ENTRADAS         4   //!< cantidad de entradas 
-
+#define     ED_TIC              1
 
 #define		ED_TECLA0  (uint8_t)((ED_BufferEntradas) & 0x01)        //!< macros para las teclas de entrada 
 #define		ED_TECLA1  (uint8_t)((ED_BufferEntradas >> 1) & 0x01)   //!< macros para las teclas de entrada 
 #define		ED_TECLA2  (uint8_t)((ED_BufferEntradas >> 2) & 0x01)   //!< macros para las teclas de entrada 
-#define		ED_TECLA3  (uint8_t)((ED_BufferEntradas >> 3) & 0x01)   //!< macros para las teclas de entrada
+#define		ED_TECLA3  (uint8_t)((ED_BufferEntradas >> 3) & 0x01)   //!< macros para las teclas de entrada 
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
@@ -67,8 +68,8 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES 
 *********************************************************************************************************/
-extern volatile uint8_t ED_BufferEntradas;  //!< aca por cada bit me indica el estado de una tecla
-
+extern volatile uint8_t ED_BufferEntradas;
+extern volatile uint8_t ED_Delay;
 /*********************************************************************************************************
  *** PROTOTIPOS DE FUNCIONES GLOBALES
 *********************************************************************************************************/
@@ -96,6 +97,20 @@ void ED_CuentaPulsos(void);
 	\return     void
 */
 void ED_Debounce(void);
+
+/**
+	\fn         void ED_Debounce(void);
+	\brief      Funcion para el debounce de las entradas digitales 
+ 	\author     Nicolas Ferragamo
+ 	\date       30 de septiembre de 2019
+ 	\param      [in] void
+ 	\param      [out] void
+	\return     void
+*/
+void ED_Debounce(void);
+
+void ED_Tic(void);
+
 
 #endif /* ENTRADAS_DIGITALES_H */
 
