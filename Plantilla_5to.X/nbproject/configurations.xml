@@ -30,7 +30,7 @@
                      projectFiles="true">
         <itemPath>Firmware_Driver/FW_Interrupt.c</itemPath>
         <itemPath>Firmware_Driver/FW_EntradasDigitales.c</itemPath>
-        <itemPath>Primitivas/FW_Display7Segmentos.c</itemPath>
+        <itemPath>Firmware_Driver/FW_Display7Segmentos.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Firmware_Init"
                      displayName="Firmware_Init"
