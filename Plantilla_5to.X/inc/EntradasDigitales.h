@@ -50,7 +50,7 @@
 
 #define		ED_ACEPTAR_ESTADO	10  //!< cantidad de veces que deve contar para validar el estado 
 #define		ED_ENTRADAS         4   //!< cantidad de entradas 
-#define     ED_TIC              1
+#define     ED_TIC              2
 
 #define		ED_TECLA0  (uint8_t)((ED_BufferEntradas) & 0x01)        //!< macros para las teclas de entrada 
 #define		ED_TECLA1  (uint8_t)((ED_BufferEntradas >> 1) & 0x01)   //!< macros para las teclas de entrada 

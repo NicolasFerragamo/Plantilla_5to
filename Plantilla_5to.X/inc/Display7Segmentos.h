@@ -46,7 +46,7 @@
  *** DEFINES GLOBALES
 *********************************************************************************************************/
 #define 	DP_DIGITOS		4  //!< Números de diplays
-#define     DP_TIC          5  //!< Demora del barrido
+#define     DP_TIC          4  //!< Demora del barrido
 
 #define DP_DISP4   LATAbits.LA4
 #define DP_DISP3   LATAbits.LA5

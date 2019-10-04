@@ -76,7 +76,6 @@ void __interrupt() myISR(void)
         
         ED_Tic();
         DP_Tic();
-        
         //Su codigo por favor!!   
         
     }

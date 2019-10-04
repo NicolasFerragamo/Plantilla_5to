@@ -40,6 +40,7 @@
 #include "Tdatos.h"
 #include "BaseBoard.h"
 #include "EntradasDigitales.h"
+#include "Display7Segmentos.h"
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -64,7 +65,7 @@
  *   ej: MEM_POOL  Mem_PoolHeap; 
 *********************************************************************************************************/
 volatile uint8_t ED_BufferEntradas = 0 ;  //!< aca por cada bit me indica el estado de una tecla
-        
+
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
 *********************************************************************************************************/
